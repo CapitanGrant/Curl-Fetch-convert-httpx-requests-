@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Request Transformer</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Python Request Transformer</h1>
+
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('curl')">CURL</div>
+        <div class="tab" onclick="switchTab('fetch')">Fetch</div>
+    </div>
+
+    <textarea id="input" placeholder="Введите ваш curl или fetch запрос здесь..."></textarea>
+    <div>
+        <select id="outputFormat">
+            <option value="requests">Requests</option>
+            <option value="httpx">HTTPX</option>
+        </select>
+        <button onclick="transformRequest()">CONVERT TO PYTHON</button>
+    </div>
+    <div class="result-container">
+        <h3>Результат:</h3>
+        <button class="copy-btn" onclick="copyToClipboard()" style="display: none;">Копировать</button>
+    </div>
+    <pre id="output"></pre>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/static/script.js"></script>
+
+</body>
+</html>
